@@ -1,0 +1,59 @@
+.addForum {
+    position: absolute;
+    width: 20.5rem;
+    height: 32rem;
+    background-color: white;
+    align-items: center;
+    right: 0;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    padding: .1rem 1.1rem 1.1rem;
+    border-radius: 10px;
+
+    label {
+        margin-top: 1rem;
+        display: block;
+        font-size: 1.1rem;
+    }
+
+    input {
+        margin-top: .5rem;
+        font-size: 1.2rem;
+        display: block;
+        border-radius: 50px;
+        border: 1px lightgray solid;
+        text-align: right;
+        padding: .5rem;
+        padding-right: 1rem;
+
+        &:focus {
+            border: 1px lime solid;
+        }
+    }
+
+    #button {
+        padding: .8rem 1.5rem;
+        margin: 1.2rem auto .5rem;
+        font-weight: 900;
+        color: white;
+        background: black;
+        text-transform: uppercase;
+
+        &:hover {
+            background: rgb(250, 27, 27);
+            color: black;
+            cursor: pointer;
+        }
+    }
+
+    input[type="number"] {
+        appearance: textfield;
+    }
+}
+
+
+.display-hide {
+    display: none;
+}

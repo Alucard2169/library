@@ -1,0 +1,24 @@
+.add {
+    position: fixed;
+    right: 0;
+    background-color: var(--menu);
+    font-size: 1.2rem;
+    border: none;
+    padding: 1rem 1rem;
+    border-radius: 0 0 0 10px;
+    cursor: pointer;
+    transition: all 200ms ease;
+    color: var(--fc);
+
+    &:hover {
+        background-color: var(--main);
+        color: var(--menu);
+    }
+}
+
+@media only screen and(max-width: 500px) {
+    .add {
+        margin-top: 7rem;
+        border-radius: 10px 0 0 10px;
+    }
+}
