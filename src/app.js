@@ -202,9 +202,9 @@ class Library{
 
 // display books on load
 document.addEventListener('DOMContentLoaded', () => {
-    document.querySelector('#totalno').textContent = JSON.parse(localStorage.books).length;
+    document.querySelector('#totalno').textContent = JSON.parse(localStorage.books).length || 0;
     document.querySelector('#profileImage').src = localStorage.getItem('profile');
-    document.querySelector(".username").textContent = localStorage.getItem('username')
+    document.querySelector(".username").textContent = localStorage.getItem('username') || "unknown";
     Library.bookList()
 })
 
