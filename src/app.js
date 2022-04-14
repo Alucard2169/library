@@ -129,6 +129,8 @@ class UserMenu{
             }
             else if(e.keyCode == 13 && changeNameValue.value == '') {
                 userName.textContent = 'unknown';
+                localStorage.setItem('username',userName.textContent)
+
                 nameChange.checked = false;
             }
         })
