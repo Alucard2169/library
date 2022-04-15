@@ -1,6 +1,6 @@
-#imageUploader {
-    width: 8rem;
-    height: 8rem;
+.image-container {
+    width: 10rem;
+    height: 10rem;
     margin-top: 3rem;
     border-radius: 100%;
     overflow: hidden;
@@ -20,10 +20,29 @@
         min-height: 100%;
         object-fit: cover;
     }
+
+}
+
+#imageUploader {
+    margin-top: 2rem;
+    width: 10rem;
+    height: 2rem;
+    text-align: center;
+    padding: .35rem 0;
+    font-weight: 900;
+    color: white;
+    background-color: black;
+    border-radius: 50px;
+
+    &:hover {
+        background-color: white;
+        color: black;
+        cursor: pointer;
+    }
 }
 
 @media only screen and(max-width: 400px) {
-    #imageUploader {
+    .image-container {
         width: 12rem;
         height: 5rem;
         margin-top: 0;
