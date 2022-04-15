@@ -1,5 +1,11 @@
 
 const container = document.querySelector('.bookDisplay');
+const totalBooks = document.querySelector('#totalno');
+const theme = document.querySelector('#theme');
+const root = document.documentElement;
+const addBook = document.querySelector('.add');
+const addForm = document.querySelector(".addForum");
+const upload = document.querySelector('#imageUploader');
 
 
 function book(book) {
@@ -104,34 +110,59 @@ class UserMenu{
 
     static userNameChanger() {
         // user name
-        let userName = document.querySelector('.username');
+        const userName = document.querySelector('.username');
+        const userNameSubmitBtn = document.querySelector('#submit-name');
         userName.textContent = 'unknown';
-        let nameChange = document.querySelector('#userName');
-        let changeNameValue = document.querySelector('#userNameValue');
+        const nameChange = document.querySelector('#userName');
+        const changeNameValue = document.querySelector('#userNameValue');
         nameChange.checked = false;
         changeNameValue.style.display = 'none';
 
-        nameChange.addEventListener('change', () => {
-            if (nameChange.checked) {
+        function check(){
                 userName.style.display = 'none';
                 changeNameValue.style.display = 'block';
+                userNameSubmitBtn.style.display = 'block';
+        }
+        function unchecked() {
+            changeNameValue.style.display = 'none';
+            userNameSubmitBtn.style.display = 'none';
+            userName.style.display = '';
+        }
+
+        nameChange.addEventListener('change', () => {
+            if (nameChange.checked) {
+                check();
             }
         })
-
-        changeNameValue.addEventListener('keypress', (e) => {
-            if (e.keyCode == 13) {
+        const change = () => {
                 userName.textContent = changeNameValue.value;
                 localStorage.setItem('username',userName.textContent)
                 userName.style.display = '';
                 changeNameValue.style.display = 'none';
+                userNameSubmitBtn.style.display = 'none';
                 changeNameValue.value = '';
                 nameChange.checked = false;
-            }
-            else if(e.keyCode == 13 && changeNameValue.value == '') {
+        }
+        const changeError = () => {
                 userName.textContent = 'unknown';
                 localStorage.setItem('username',userName.textContent)
-
                 nameChange.checked = false;
+        }
+        changeNameValue.addEventListener('keypress', (e) => {
+            if (e.keyCode == 13) {
+                change();
+                unchecked();
+            }
+        })
+
+        userNameSubmitBtn.addEventListener('click', () => {
+            if (changeNameValue.value === '') {
+                changeError()
+                unchecked();
+            }
+            else {
+                change();
+                unchecked();
             }
         })
     }
@@ -174,7 +205,7 @@ class Store{
 
 class Library{
     static bookList() {
-        let books = Store.getBooks();
+        const books = Store.getBooks();
         books.forEach((book)=>Library.display(book))
     }
 
@@ -199,10 +230,14 @@ class Library{
 }
 
 
-
 // display books on load
 document.addEventListener('DOMContentLoaded', () => {
-    document.querySelector('#totalno').textContent = JSON.parse(localStorage.books).length || 0;
+    if (localStorage.getItem(book) == null) {
+        totalBooks.textContent = 0;
+    }
+    else {
+        totalBooks.textContent = JSON.parse(localStorage.books).length;
+    }
     document.querySelector('#profileImage').src = localStorage.getItem('profile');
     document.querySelector(".username").textContent = localStorage.getItem('username') || "unknown";
     Library.bookList()
@@ -221,9 +256,6 @@ document.querySelector('.bookDisplay').addEventListener('click', (e) => {
 })
 
 // add new books form
-
-let addBook = document.querySelector('.add');
-let addForm = document.querySelector(".addForum")
 addForm.classList.add('display-hide')
 addBook.addEventListener("click", () => {
     addForm.classList.toggle('display-hide')
@@ -235,13 +267,13 @@ addForm.addEventListener('submit', (e) => {
     // prevent default state
     e.preventDefault()
     // take values from user
-    let title = document.querySelector('#titleValue').value;
-    let author = document.querySelector('#authorValue').value;
-    let state = document.querySelector('#statusValue').value;
-    let page = document.querySelector('#pageValue').value;
-    let image = document.querySelector('#imageValue').value;
+    const title = document.querySelector('#titleValue').value;
+    const author = document.querySelector('#authorValue').value;
+    const state = document.querySelector('#statusValue').value;
+    const page = document.querySelector('#pageValue').value;
+    const image = document.querySelector('#imageValue').value;
 
-    let book1 = new Book(title, author, page, state, image);
+    const book1 = new Book(title, author, page, state, image);
 
     Library.display(book1);
 
@@ -254,19 +286,18 @@ addForm.addEventListener('submit', (e) => {
     document.querySelector('#totalno').textContent = JSON.parse(localStorage.books).length;
 })
 
+// close book form if unfocused
+
 
 
 
 
 // profile picture
-let upload = document.querySelector('#imageUploader');
 upload.addEventListener('click', () => {
     UserMenu.profilePicture()
 })
 
 // theme button
-const theme = document.querySelector('#theme');
-let root = document.documentElement;
 theme.checked = false;
  
 theme.addEventListener('change', () => {
