@@ -6,9 +6,9 @@
   --fc: black;
 }
 
-#imageUploader {
-  width: 8rem;
-  height: 8rem;
+.image-container {
+  width: 10rem;
+  height: 10rem;
   margin-top: 3rem;
   border-radius: 100%;
   overflow: hidden;
@@ -27,20 +27,38 @@
           box-shadow: 0 0 10px lightgray;
 }
 
-#imageUploader:hover {
+.image-container:hover {
   -webkit-transform: scale(1.2);
           transform: scale(1.2);
 }
 
-#imageUploader #profileImage {
+.image-container #profileImage {
   min-width: 100%;
   min-height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
 }
 
+#imageUploader {
+  margin-top: 2rem;
+  width: 10rem;
+  height: 2rem;
+  text-align: center;
+  padding: .35rem 0;
+  font-weight: 900;
+  color: white;
+  background-color: black;
+  border-radius: 50px;
+}
+
+#imageUploader:hover {
+  background-color: white;
+  color: black;
+  cursor: pointer;
+}
+
 @media only screen and (max-width: 400px) {
-  #imageUploader {
+  .image-container {
     width: 12rem;
     height: 5rem;
     margin-top: 0;
@@ -197,6 +215,7 @@
 }
 
 .card .info .bookName {
+  height: 6.2rem;
   font-size: 1.3rem;
   font-weight: 500;
   padding: .8rem 0;
@@ -254,6 +273,12 @@
   position: relative;
 }
 
+.userInfo .username i {
+  font-size: 1rem;
+  color: black;
+  border: 1px red solid;
+}
+
 .userInfo .username::after {
   content: '';
   position: absolute;
@@ -279,6 +304,15 @@
           transform-origin: center;
 }
 
+.userInfo .username::before {
+  content: "\f044";
+  font: var(--fa-font-solid);
+  right: -30px;
+  bottom: 10px;
+  position: absolute;
+  font-size: 1rem;
+}
+
 .userInfo .userStatus {
   font-family: 'Quicksand', sans-serif;
   margin-top: 1rem;
@@ -302,6 +336,23 @@
   padding: .5rem;
   border-radius: 50px;
   border: 1px gray solid;
+}
+
+.userInfo #submit-name {
+  display: none;
+  margin: 1rem auto;
+  padding: .5rem 2rem;
+  border-radius: 50px;
+  border: none;
+  background-color: black;
+  color: white;
+  font-weight: 900;
+}
+
+.userInfo #submit-name:hover {
+  color: black;
+  background-color: white;
+  cursor: pointer;
 }
 
 @media only screen and (max-width: 400px) {
@@ -351,7 +402,7 @@
   display: block;
   border-radius: 50px;
   border: 1px lightgray solid;
-  text-align: right;
+  text-align: left;
   padding: .5rem;
   padding-right: 1rem;
 }
