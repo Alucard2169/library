@@ -232,7 +232,7 @@ class Library{
 
 // display books on load
 document.addEventListener('DOMContentLoaded', () => {
-    if (localStorage.getItem(book) == null) {
+    if (localStorage.getItem('books') == null) {
         totalBooks.textContent = 0;
     }
     else {
