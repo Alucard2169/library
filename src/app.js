@@ -286,10 +286,13 @@ addForm.addEventListener('submit', (e) => {
     document.querySelector('#totalno').textContent = JSON.parse(localStorage.books).length;
 })
 
-// close book form if unfocused
 
-
-
+// add form close button 
+const closeForm = document.querySelector('.close');
+closeForm.addEventListener('click', () => {
+    addForm.classList.add('display-hide');
+    Library.clearInput();
+})
 
 
 // profile picture
