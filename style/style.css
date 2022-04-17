@@ -377,7 +377,8 @@
   position: absolute;
   width: 20.5rem;
   height: 32rem;
-  background-color: white;
+  background-color: var(--menu);
+  color: var(--main);
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -388,6 +389,19 @@
   margin: auto;
   padding: .1rem 1.1rem 1.1rem;
   border-radius: 10px;
+}
+
+.addForum .close {
+  border: none;
+  background-color: var(--menu);
+  padding: .65rem 1rem;
+  border-radius: 100px;
+  color: var(--main);
+  font-size: 1rem;
+  font-weight: 900;
+  position: absolute;
+  right: -3rem;
+  cursor: pointer;
 }
 
 .addForum label {
