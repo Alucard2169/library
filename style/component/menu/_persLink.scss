@@ -1,0 +1,65 @@
+.personal {
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    font-size: 2rem;
+    margin-top: 1rem;
+
+    .login {
+        display: none;
+    }
+
+    //     .fa-circle-half-stroke:hover {
+    //         color: white;
+    //         text-shadow: 0 0 10px red;
+    //     }
+
+    //     .login {
+    //         border: none;
+    //         padding: 0 1rem;
+    //         width: 40%;
+    //         background-color: rgb(247, 62, 62);
+    //         color: white;
+    //         font-weight: 500;
+    //         border-radius: 20px;
+    //         font-size: 1.2rem;
+    //         cursor: pointer;
+    //         position: relative;
+
+
+    //         .help {
+    //             display: none;
+    //             position: absolute;
+    //             color: black;
+    //             font-size: 1rem;
+    //             background-color: rgb(255, 44, 44);
+    //             width: 5rem;
+    //             padding: .5rem 0;
+    //             border-radius: 10px;
+    //             top: 50px;
+    //             left: -10px;
+    //             opacity: 0;
+    //         }
+
+    //         &:hover {
+    //             color: black;
+    //         }
+
+    //         &:hover .help {
+    //             display: block;
+    //             opacity: 1;
+    //         }
+
+
+    //     }
+    .themeButton {
+        font-size: 2rem;
+        position: absolute;
+        top: 0;
+        left: 10px;
+        background-color: red;
+        display: block;
+    }
+
+
+}
