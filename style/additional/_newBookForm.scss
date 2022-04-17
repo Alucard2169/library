@@ -1,8 +1,24 @@
 .addForum {
+
+    .close {
+        border: none;
+        background-color: var(--menu);
+        padding: .65rem 1rem;
+        border-radius: 100px;
+        color: var(--main);
+        font-size: 1rem;
+        font-weight: 900;
+        position: absolute;
+        right: -3rem;
+        cursor: pointer;
+
+    }
+
     position: absolute;
     width: 20.5rem;
     height: 32rem;
-    background-color: white;
+    background-color: var(--menu);
+    color: var(--main);
     align-items: center;
     right: 0;
     left: 0;
@@ -24,7 +40,7 @@
         display: block;
         border-radius: 50px;
         border: 1px lightgray solid;
-        text-align: right;
+        text-align: left;
         padding: .5rem;
         padding-right: 1rem;
 
