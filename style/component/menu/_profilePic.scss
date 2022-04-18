@@ -45,6 +45,12 @@
     .image-container {
         width: 12rem;
         height: 5rem;
-        margin-top: 0;
+
+        margin: -3rem -7rem 0 0;
+    }
+
+    #imageUploader {
+        margin-top: 5rem;
+        width: 20rem;
     }
 }
