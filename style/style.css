@@ -61,7 +61,11 @@
   .image-container {
     width: 12rem;
     height: 5rem;
-    margin-top: 0;
+    margin: -3rem -7rem 0 0;
+  }
+  #imageUploader {
+    margin-top: 5rem;
+    width: 20rem;
   }
 }
 
@@ -117,7 +121,7 @@
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
             flex-direction: row;
-    height: 15vh;
+    height: 20vh;
     width: 100vw;
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
@@ -146,7 +150,7 @@
 
 @media only screen and (max-width: 500px) {
   .add {
-    margin-top: 7rem;
+    margin-top: 10rem;
     border-radius: 10px 0 0 10px;
   }
 }
@@ -179,7 +183,7 @@
     gap: 1rem;
   }
   .display {
-    margin: 0 -30%;
+    margin: 5rem -30% 0;
     width: 100%;
   }
 }
@@ -362,7 +366,7 @@
   }
   .userInfo .username {
     font-size: 1rem;
-    margin-right: 1rem;
+    margin-right: 2rem;
   }
   .userInfo .userStatus {
     text-align: right;
@@ -370,6 +374,10 @@
   }
   .userInfo .totalStatus {
     font-size: .8rem;
+  }
+  .userInfo #userNameValue {
+    margin-top: 2rem;
+    width: 80%;
   }
 }
 
@@ -448,6 +456,19 @@
 
 .display-hide {
   display: none;
+}
+
+@media only screen and (max-width: 500px) {
+  .addForum {
+    margin-top: 10rem;
+    width: 70%;
+  }
+  .addForum .close {
+    background-color: orangered;
+  }
+  .addForum input {
+    width: 100%;
+  }
 }
 
 * {
