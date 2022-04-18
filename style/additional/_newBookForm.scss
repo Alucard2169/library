@@ -73,3 +73,18 @@
 .display-hide {
     display: none;
 }
+
+@media only screen and (max-width: 500px) {
+    .addForum {
+        .close {
+            background-color: orangered;
+        }
+
+        margin-top: 10rem;
+        width: 70%;
+
+        input {
+            width: 100%;
+        }
+    }
+}
