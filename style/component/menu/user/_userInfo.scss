@@ -94,7 +94,7 @@
 
         .username {
             font-size: 1rem;
-            margin-right: 1rem;
+            margin-right: 2rem;
         }
 
         .userStatus {
@@ -104,6 +104,11 @@
 
         .totalStatus {
             font-size: .8rem;
+        }
+
+        #userNameValue {
+            margin-top: 2rem;
+            width: 80%;
         }
     }
 }
