@@ -1,0 +1,61 @@
+@import "navbar.scss";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style-type: none;
+}
+
+body,
+html {
+  height: 100vh;
+  width: 100vw;
+}
+
+body {
+  display: flex;
+  gap: 1rem;
+
+}
+
+.darkTheme {
+
+  background-color: #131313;
+
+}
+
+
+.searchPage {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+
+  .top {
+
+    label {
+      position: relative;
+
+      img {
+        position: absolute;
+        width: 2rem;
+        height: 2rem;
+        top: -50%;
+        left: 2%;
+
+      }
+
+      .inputField {
+        padding: .8rem;
+        padding-left: 3rem;
+        font-size: 1.2rem;
+        border-radius: 100px;
+        width: 20rem;
+        background-color: skyblue;
+        outline: none;
+        border: none;
+      }
+    }
+  }
+}

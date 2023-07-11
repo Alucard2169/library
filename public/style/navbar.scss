@@ -1,0 +1,72 @@
+    .navbar {
+        width: fit-content;
+        padding: 1rem 0.5rem;
+        height: 100vh;
+        border-right: 2px skyblue solid;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: white;
+
+        form {
+            margin-bottom: auto;
+            button {
+                background-color: transparent;
+                border: none;
+
+                .homeIcon {
+                    width: 3rem;
+                    height: 3rem;
+                }
+            }
+        }
+
+        ul {
+            margin-bottom: auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 4rem;
+
+            .addIcon,
+            .searchIcon {
+                width: 3rem;
+                height: 3rem;
+                background: skyblue;
+                padding: .5rem;
+                border-radius: 10px;
+                cursor: pointer;
+                transition: all 100ms ease-in-out;
+
+                button {
+                    background: transparent;
+                    border: none;
+                }
+
+                img {
+                    filter: invert(1);
+                    width: 100%;
+                    height: 100%;
+                }
+
+                &:hover {
+                    outline: 2px skyblue solid;
+                    outline-offset: 5px;
+                }
+            }
+        }
+
+        .themeButton {
+            border: none;
+            width: 2.5rem;
+            height: 2.5rem;
+            background: transparent;
+            cursor: pointer;
+
+            img {
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
